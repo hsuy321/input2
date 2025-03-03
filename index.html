@@ -6,29 +6,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>2 INPUT 1 OUTPUT TEMPLATE</title>
     <style>
-        /* STYLE FOR THE INPUT FIELD */
-
         body {
             font-family: Arial, sans-serif;
+            overflow-y: hidden
         }
 
-
-        .search {
-            display: fixed;
+        div {
+            position: fixed;
             top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
         }
-
 
         #charInput1 {
-            width: 1em
+            width: 1rem;
+            background-color: white;
+            color: black;
+        }
+
+        #charInput1:hover {
+            background-color: black;
+            color: white;
         }
 
         #charInput2 {
-            width: 1em
+            width: 1rem;
+            background-color: white;
+            color: black;
+        }
+
+        #charInput2:hover {
+            background-color: black;
+            color: white;
         }
 
         /* STYLE FOR THE SUBMIT BUTTON */
-        #submitButton {}
+        #submitButton {
+            background-color: white;
+            color: black
+        }
+
+        #submitButton:hover {
+            background-color: black;
+            color: white
+        }
 
         /* STYLE FOR THE IFRAME */
         #displayedFrame {
@@ -41,16 +62,11 @@
 </head>
 
 <body>
-    <!-- INPUT FIELD FOR 1 CHARACTER -->
-    <div class="search">
+    <div>
         <input type="text" id="charInput1" maxlength="1">
         <input type="text" id="charInput2" maxlength="1">
-        <!-- BUTTON TO DISPLAY IFRAME -->
         <button onclick="displayContent()" id="submitButton">.wikipedia.org</button>
     </div>
-
-
-
 
     <!-- IFRAME TO DISPLAY -->
     <iframe id="displayedFrame" src="about:blank"></iframe>
@@ -68,48 +84,53 @@
                 frameElement.style.display = "block";
             }
 
-            if (input1_letter == "F" && input2_letter == "R") {
+            else if (input1_letter == "F" && input2_letter == "R") {
                 frameElement.src = "https://fr.wikipedia.org/";
                 frameElement.style.display = "block";
             }
 
-            if (input1_letter == "D" && input2_letter == "E") {
+            else if (input1_letter == "D" && input2_letter == "E") {
                 frameElement.src = "https://de.wikipedia.org/";
                 frameElement.style.display = "block";
             }
 
-            if (input1_letter == "E" && input2_letter == "S") {
+            else if (input1_letter == "E" && input2_letter == "S") {
                 frameElement.src = "https://es.wikipedia.org/";
                 frameElement.style.display = "block";
             }
 
-            if (input1_letter == "J" && input2_letter == "A") {
+            else if (input1_letter == "J" && input2_letter == "A") {
                 frameElement.src = "https://ja.wikipedia.org/";
                 frameElement.style.display = "block";
             }
 
-            if (input1_letter == "R" && input2_letter == "U") {
+            else if (input1_letter == "R" && input2_letter == "U") {
                 frameElement.src = "https://ru.wikipedia.org/";
                 frameElement.style.display = "block";
             }
 
-            if (input1_letter == "P" && input2_letter == "T") {
+            else if (input1_letter == "P" && input2_letter == "T") {
                 frameElement.src = "https://pt.wikipedia.org/";
                 frameElement.style.display = "block";
             }
 
-            if (input1_letter == "I" && input2_letter == "T") {
+            else if (input1_letter == "I" && input2_letter == "T") {
                 frameElement.src = "https://it.wikipedia.org/";
                 frameElement.style.display = "block";
             }
 
-            if (input1_letter == "Z" && input2_letter == "H") {
+            else if (input1_letter == "Z" && input2_letter == "H") {
                 frameElement.src = "https://zh.wikipedia.org/";
                 frameElement.style.display = "block";
             }
 
-            if (input1_letter == "F" && input2_letter == "A") {
+            else if (input1_letter == "F" && input2_letter == "A") {
                 frameElement.src = "https://en.wikipedia.org/";
+                frameElement.style.display = "block";
+            }
+
+            else {
+                frameElement.src = "https://meta.wikimedia.org/wiki/List_of_Wikipedias";
                 frameElement.style.display = "block";
             }
         }
