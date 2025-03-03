@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2 INPUT 1 OUTPUT TEMPLATE</title>
+    <style>
+        /* STYLE FOR THE INPUT FIELD */
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+
+        .search {
+            display: fixed;
+            top: 50%;
+        }
+
+
+        #charInput1 {
+            width: 1em
+        }
+
+        #charInput2 {
+            width: 1em
+        }
+
+        /* STYLE FOR THE SUBMIT BUTTON */
+        #submitButton {}
+
+        /* STYLE FOR THE IFRAME */
+        #displayedFrame {
+            width: 100vw;
+            height: 100vh;
+            border: none;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- INPUT FIELD FOR 1 CHARACTER -->
+    <div class="search">
+        <input type="text" id="charInput1" maxlength="1">
+        <input type="text" id="charInput2" maxlength="1">
+        <!-- BUTTON TO DISPLAY IFRAME -->
+        <button onclick="displayContent()" id="submitButton">.wikipedia.org</button>
+    </div>
+
+
+
+
+    <!-- IFRAME TO DISPLAY -->
+    <iframe id="displayedFrame" src="about:blank"></iframe>
+
+    <!-- Content Display Script Below -->
+    <script>
+        function displayContent() {
+            const frameElement = document.getElementById("displayedFrame");
+            const input1_letter = document.getElementById("charInput1").value.toUpperCase();
+            const input2_letter = document.getElementById("charInput2").value.toUpperCase();
+
+
+            if (input1_letter == "E" && input2_letter == "N") {
+                frameElement.src = "https://en.wikipedia.org/";
+                frameElement.style.display = "block";
+            }
+
+            if (input1_letter == "F" && input2_letter == "R") {
+                frameElement.src = "https://fr.wikipedia.org/";
+                frameElement.style.display = "block";
+            }
+
+            if (input1_letter == "D" && input2_letter == "E") {
+                frameElement.src = "https://de.wikipedia.org/";
+                frameElement.style.display = "block";
+            }
+
+            if (input1_letter == "E" && input2_letter == "S") {
+                frameElement.src = "https://es.wikipedia.org/";
+                frameElement.style.display = "block";
+            }
+
+            if (input1_letter == "J" && input2_letter == "A") {
+                frameElement.src = "https://ja.wikipedia.org/";
+                frameElement.style.display = "block";
+            }
+
+            if (input1_letter == "R" && input2_letter == "U") {
+                frameElement.src = "https://ru.wikipedia.org/";
+                frameElement.style.display = "block";
+            }
+
+            if (input1_letter == "P" && input2_letter == "T") {
+                frameElement.src = "https://pt.wikipedia.org/";
+                frameElement.style.display = "block";
+            }
+
+            if (input1_letter == "I" && input2_letter == "T") {
+                frameElement.src = "https://it.wikipedia.org/";
+                frameElement.style.display = "block";
+            }
+
+            if (input1_letter == "Z" && input2_letter == "H") {
+                frameElement.src = "https://zh.wikipedia.org/";
+                frameElement.style.display = "block";
+            }
+
+            if (input1_letter == "F" && input2_letter == "A") {
+                frameElement.src = "https://en.wikipedia.org/";
+                frameElement.style.display = "block";
+            }
+        }
+    </script>
+
+</body>
+
+</html>
