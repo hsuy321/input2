@@ -41,6 +41,14 @@
         }
 
         /* STYLE FOR THE SUBMIT BUTTON */
+
+        #backButton {
+            background-color: white;
+            color: black;
+            position: fixed;
+
+        }
+
         #submitButton {
             background-color: white;
             color: black
@@ -62,6 +70,7 @@
 </head>
 
 <body>
+    <button onclick="history.back()" id="backButton">back</button>
     <div>
         <input type="text" id="charInput1" maxlength="1">
         <input type="text" id="charInput2" maxlength="1">
