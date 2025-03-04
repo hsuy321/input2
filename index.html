@@ -46,7 +46,16 @@
             background-color: white;
             color: black;
             position: fixed;
+            left: 10px;
+            top: 10px;
+        }
 
+        #homeButton {
+            background-color: white;
+            color: black;
+            position: fixed;
+            right: 10px;
+            top: 10px;
         }
 
         #submitButton {
@@ -71,6 +80,7 @@
 
 <body>
     <button onclick="history.back()" id="backButton">back</button>
+    <button onclick="goHome()" id="homeButton">home</button>
     <div>
         <input type="text" id="charInput1" maxlength="1">
         <input type="text" id="charInput2" maxlength="1">
@@ -82,6 +92,13 @@
 
     <!-- Content Display Script Below -->
     <script>
+        // Add event listener for Enter key
+        document.addEventListener('keypress', function (event) {
+            if (event.key === 'Enter') {
+                displayContent();
+            }
+        });
+
         function displayContent() {
             const frameElement = document.getElementById("displayedFrame");
             const input1_letter = document.getElementById("charInput1").value.toUpperCase();
@@ -373,6 +390,12 @@
                 frameElement.src = "https://meta.wikimedia.org/wiki/List_of_Wikipedias#All_Wikipedias_ordered_by_number_of_articles";
                 frameElement.style.display = "block";
             }
+        }
+
+        function goHome() {
+            const frameElement = document.getElementById("displayedFrame");
+            frameElement.src = "https://meta.wikimedia.org/wiki/List_of_Wikipedias#All_Wikipedias_ordered_by_number_of_articles";
+            frameElement.style.display = "block";
         }
     </script>
 
