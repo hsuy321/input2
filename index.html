@@ -22,7 +22,6 @@
             width: 1rem;
             background-color: white;
             color: black;
-            border-radius: 0;
         }
 
         #charInput1:hover {
@@ -30,26 +29,15 @@
             color: white;
         }
 
-        #charInput1:focus {
-            outline: none;
-            border-radius: 0;
-        }
-
         #charInput2 {
             width: 1rem;
             background-color: white;
             color: black;
-            border-radius: 0;
         }
 
         #charInput2:hover {
             background-color: black;
             color: white;
-        }
-
-        #charInput2:focus {
-            outline: none;
-            border-radius: 0;
         }
 
         /* STYLE FOR THE SUBMIT BUTTON */
@@ -62,11 +50,6 @@
             top: 10px;
         }
 
-        #backButton:hover {
-            background-color: black;
-            color: white;
-        }
-
         #homeButton {
             background-color: white;
             color: black;
@@ -75,19 +58,14 @@
             top: 10px;
         }
 
-        #homeButton:hover {
-            background-color: black;
-            color: white;
-        }
-
         #submitButton {
             background-color: white;
-            color: black;
+            color: black
         }
 
         #submitButton:hover {
             background-color: black;
-            color: white;
+            color: white
         }
 
         /* STYLE FOR THE IFRAME */
@@ -644,7 +622,7 @@
                 frameElement.style.display = "block";
             }
 
-            // Fix remaining three-letter codes
+            // Adding missing languages
             else if (input1_letter == "A" && input2_letter == "Y") {
                 frameElement.src = "https://ay.wikipedia.org/";
                 frameElement.style.display = "block";
@@ -662,6 +640,11 @@
 
             else if (input1_letter == "I" && input2_letter == "E") {
                 frameElement.src = "https://ie.wikipedia.org/";
+                frameElement.style.display = "block";
+            }
+
+            else if (input1_letter == "K" && input2_letter == "U") {
+                frameElement.src = "https://kur.wikipedia.org/";
                 frameElement.style.display = "block";
             }
 
@@ -707,6 +690,37 @@
 
             else if (input1_letter == "V" && input2_letter == "E") {
                 frameElement.src = "https://ve.wikipedia.org/";
+                frameElement.style.display = "block";
+            }
+
+            // Adding even more languages
+            else if (input1_letter == "A" && input2_letter == "C") {
+                frameElement.src = "https://ace.wikipedia.org/";
+                frameElement.style.display = "block";
+            }
+
+            else if (input1_letter == "B" && input2_letter == "M") {
+                frameElement.src = "https://bam.wikipedia.org/";
+                frameElement.style.display = "block";
+            }
+
+            else if (input1_letter == "C" && input2_letter == "B") {
+                frameElement.src = "https://cbk.wikipedia.org/";
+                frameElement.style.display = "block";
+            }
+
+            else if (input1_letter == "D" && input2_letter == "S") {
+                frameElement.src = "https://dsb.wikipedia.org/";
+                frameElement.style.display = "block";
+            }
+
+            else if (input1_letter == "E" && input2_letter == "O") {
+                frameElement.src = "https://epo.wikipedia.org/";
+                frameElement.style.display = "block";
+            }
+
+            else if (input1_letter == "F" && input2_letter == "U") {
+                frameElement.src = "https://fur.wikipedia.org/";
                 frameElement.style.display = "block";
             }
 
