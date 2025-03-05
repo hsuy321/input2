@@ -22,6 +22,7 @@
             width: 1rem;
             background-color: white;
             color: black;
+            border-radius: 0;
         }
 
         #charInput1:hover {
@@ -29,15 +30,26 @@
             color: white;
         }
 
+        #charInput1:focus {
+            outline: none;
+            border-radius: 0;
+        }
+
         #charInput2 {
             width: 1rem;
             background-color: white;
             color: black;
+            border-radius: 0;
         }
 
         #charInput2:hover {
             background-color: black;
             color: white;
+        }
+
+        #charInput2:focus {
+            outline: none;
+            border-radius: 0;
         }
 
         /* STYLE FOR THE SUBMIT BUTTON */
@@ -50,6 +62,11 @@
             top: 10px;
         }
 
+        #backButton:hover {
+            background-color: black;
+            color: white;
+        }
+
         #homeButton {
             background-color: white;
             color: black;
@@ -58,14 +75,19 @@
             top: 10px;
         }
 
+        #homeButton:hover {
+            background-color: black;
+            color: white;
+        }
+
         #submitButton {
             background-color: white;
-            color: black
+            color: black;
         }
 
         #submitButton:hover {
             background-color: black;
-            color: white
+            color: white;
         }
 
         /* STYLE FOR THE IFRAME */
@@ -80,7 +102,7 @@
 
 <body>
     <button onclick="history.back()" id="backButton">back</button>
-    <button onclick="goHome()" id="homeButton">home</button>
+    <button onclick="goHome()" id="homeButton">clear</button>
     <div>
         <input type="text" id="charInput1" maxlength="1">
         <input type="text" id="charInput2" maxlength="1">
@@ -622,175 +644,139 @@
                 frameElement.style.display = "block";
             }
 
-            // Adding missing languages
+            // Fix remaining three-letter codes
             else if (input1_letter == "A" && input2_letter == "Y") {
-                frameElement.src = "https://aym.wikipedia.org/";
+                frameElement.src = "https://ay.wikipedia.org/";
                 frameElement.style.display = "block";
             }
 
             else if (input1_letter == "C" && input2_letter == "V") {
-                frameElement.src = "https://chv.wikipedia.org/";
+                frameElement.src = "https://cv.wikipedia.org/";
                 frameElement.style.display = "block";
             }
 
             else if (input1_letter == "F" && input2_letter == "J") {
-                frameElement.src = "https://fij.wikipedia.org/";
+                frameElement.src = "https://fj.wikipedia.org/";
                 frameElement.style.display = "block";
             }
 
             else if (input1_letter == "I" && input2_letter == "E") {
-                frameElement.src = "https://ina.wikipedia.org/";
-                frameElement.style.display = "block";
-            }
-
-            else if (input1_letter == "K" && input2_letter == "U") {
-                frameElement.src = "https://kur.wikipedia.org/";
+                frameElement.src = "https://ie.wikipedia.org/";
                 frameElement.style.display = "block";
             }
 
             else if (input1_letter == "M" && input2_letter == "I") {
-                frameElement.src = "https://min.wikipedia.org/";
+                frameElement.src = "https://mi.wikipedia.org/";
                 frameElement.style.display = "block";
             }
 
             else if (input1_letter == "N" && input2_letter == "V") {
-                frameElement.src = "https://nav.wikipedia.org/";
+                frameElement.src = "https://nv.wikipedia.org/";
                 frameElement.style.display = "block";
             }
 
             else if (input1_letter == "P" && input2_letter == "I") {
-                frameElement.src = "https://pih.wikipedia.org/";
+                frameElement.src = "https://pi.wikipedia.org/";
                 frameElement.style.display = "block";
             }
 
             else if (input1_letter == "R" && input2_letter == "M") {
-                frameElement.src = "https://rom.wikipedia.org/";
+                frameElement.src = "https://rm.wikipedia.org/";
                 frameElement.style.display = "block";
             }
 
             else if (input1_letter == "S" && input2_letter == "C") {
-                frameElement.src = "https://scn.wikipedia.org/";
+                frameElement.src = "https://sc.wikipedia.org/";
                 frameElement.style.display = "block";
             }
 
             else if (input1_letter == "S" && input2_letter == "H") {
-                frameElement.src = "https://shn.wikipedia.org/";
+                frameElement.src = "https://sh.wikipedia.org/";
                 frameElement.style.display = "block";
             }
 
             else if (input1_letter == "T" && input2_letter == "N") {
-                frameElement.src = "https://tna.wikipedia.org/";
+                frameElement.src = "https://tn.wikipedia.org/";
                 frameElement.style.display = "block";
             }
 
             else if (input1_letter == "T" && input2_letter == "S") {
-                frameElement.src = "https://tsn.wikipedia.org/";
+                frameElement.src = "https://ts.wikipedia.org/";
                 frameElement.style.display = "block";
             }
 
             else if (input1_letter == "V" && input2_letter == "E") {
-                frameElement.src = "https://vec.wikipedia.org/";
-                frameElement.style.display = "block";
-            }
-
-            // Adding even more languages
-            else if (input1_letter == "A" && input2_letter == "C") {
-                frameElement.src = "https://ace.wikipedia.org/";
-                frameElement.style.display = "block";
-            }
-
-            else if (input1_letter == "B" && input2_letter == "M") {
-                frameElement.src = "https://bam.wikipedia.org/";
-                frameElement.style.display = "block";
-            }
-
-            else if (input1_letter == "C" && input2_letter == "B") {
-                frameElement.src = "https://cbk.wikipedia.org/";
-                frameElement.style.display = "block";
-            }
-
-            else if (input1_letter == "D" && input2_letter == "S") {
-                frameElement.src = "https://dsb.wikipedia.org/";
-                frameElement.style.display = "block";
-            }
-
-            else if (input1_letter == "E" && input2_letter == "O") {
-                frameElement.src = "https://epo.wikipedia.org/";
-                frameElement.style.display = "block";
-            }
-
-            else if (input1_letter == "F" && input2_letter == "U") {
-                frameElement.src = "https://fur.wikipedia.org/";
+                frameElement.src = "https://ve.wikipedia.org/";
                 frameElement.style.display = "block";
             }
 
             else if (input1_letter == "H" && input2_letter == "A") {
-                frameElement.src = "https://hau.wikipedia.org/";
+                frameElement.src = "https://ha.wikipedia.org/";
                 frameElement.style.display = "block";
             }
 
             else if (input1_letter == "I" && input2_letter == "K") {
-                frameElement.src = "https://iku.wikipedia.org/";
+                frameElement.src = "https://ik.wikipedia.org/";
                 frameElement.style.display = "block";
             }
 
             else if (input1_letter == "K" && input2_letter == "W") {
-                frameElement.src = "https://kwi.wikipedia.org/";
+                frameElement.src = "https://kw.wikipedia.org/";
                 frameElement.style.display = "block";
             }
 
             else if (input1_letter == "L" && input2_letter == "B") {
-                frameElement.src = "https://lbe.wikipedia.org/";
+                frameElement.src = "https://lb.wikipedia.org/";
                 frameElement.style.display = "block";
             }
 
             else if (input1_letter == "M" && input2_letter == "H") {
-                frameElement.src = "https://mhr.wikipedia.org/";
+                frameElement.src = "https://mh.wikipedia.org/";
                 frameElement.style.display = "block";
             }
 
             else if (input1_letter == "N" && input2_letter == "A") {
-                frameElement.src = "https://nah.wikipedia.org/";
+                frameElement.src = "https://na.wikipedia.org/";
                 frameElement.style.display = "block";
             }
 
             else if (input1_letter == "O" && input2_letter == "M") {
-                frameElement.src = "https://omy.wikipedia.org/";
+                frameElement.src = "https://om.wikipedia.org/";
                 frameElement.style.display = "block";
             }
 
             else if (input1_letter == "P" && input2_letter == "M") {
-                frameElement.src = "https://pms.wikipedia.org/";
+                frameElement.src = "https://pm.wikipedia.org/";
                 frameElement.style.display = "block";
             }
 
             else if (input1_letter == "R" && input2_letter == "W") {
-                frameElement.src = "https://rwa.wikipedia.org/";
+                frameElement.src = "https://rw.wikipedia.org/";
                 frameElement.style.display = "block";
             }
 
             else if (input1_letter == "S" && input2_letter == "N") {
-                frameElement.src = "https://sna.wikipedia.org/";
+                frameElement.src = "https://sn.wikipedia.org/";
                 frameElement.style.display = "block";
             }
 
             else if (input1_letter == "T" && input2_letter == "O") {
-                frameElement.src = "https://ton.wikipedia.org/";
+                frameElement.src = "https://to.wikipedia.org/";
                 frameElement.style.display = "block";
             }
 
             else if (input1_letter == "T" && input2_letter == "W") {
-                frameElement.src = "https://twi.wikipedia.org/";
+                frameElement.src = "https://tw.wikipedia.org/";
                 frameElement.style.display = "block";
             }
 
             else if (input1_letter == "W" && input2_letter == "L") {
-                frameElement.src = "https://wln.wikipedia.org/";
+                frameElement.src = "https://wl.wikipedia.org/";
                 frameElement.style.display = "block";
             }
 
             else if (input1_letter == "Z" && input2_letter == "A") {
-                frameElement.src = "https://zea.wikipedia.org/";
+                frameElement.src = "https://za.wikipedia.org/";
                 frameElement.style.display = "block";
             }
 
