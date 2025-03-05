@@ -82,8 +82,8 @@
     <button onclick="history.back()" id="backButton">back</button>
     <button onclick="goHome()" id="homeButton">clear</button>
     <div>
-        <input type="text" id="charInput1" maxlength="1">
-        <input type="text" id="charInput2" maxlength="1">
+        <input type="text" placeholder="e" id="charInput1" maxlength="1">
+        <input type="text" placeholder="n" id="charInput2" maxlength="1">
         <button onclick="displayContent()" id="submitButton">.wikipedia.org</button>
     </div>
 
@@ -952,13 +952,39 @@
             }
         }
 
+        function getRandomLanguageCode() {
+            const languageCodes = [
+                { first: "e", second: "n" },  // English
+                { first: "f", second: "r" },  // French
+                { first: "d", second: "e" },  // German
+                { first: "e", second: "s" },  // Spanish
+                { first: "i", second: "t" },  // Italian
+                { first: "j", second: "a" },  // Japanese
+                { first: "r", second: "u" },  // Russian
+                { first: "z", second: "h" },  // Chinese
+                { first: "p", second: "t" },  // Portuguese
+                { first: "a", second: "r" }   // Arabic
+            ];
+            return languageCodes[Math.floor(Math.random() * languageCodes.length)];
+        }
+
+        function updatePlaceholders() {
+            const code = getRandomLanguageCode();
+            document.getElementById("charInput1").placeholder = code.first;
+            document.getElementById("charInput2").placeholder = code.second;
+        }
+
         function goHome() {
             const frameElement = document.getElementById("displayedFrame");
             frameElement.src = "";
             frameElement.style.display = "block";
             charInput1.value = "";
             charInput2.value = "";
+            updatePlaceholders();
         }
+
+        // Set initial placeholders when page loads
+        updatePlaceholders();
 
     </script>
 
