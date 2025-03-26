@@ -74,6 +74,26 @@
             height: 100vh;
             border: none;
             display: none;
+            z-index: 0;
+        }
+
+        .language-preview {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            max-width: 80vw;
+            max-height: 80vh;
+            display: none;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        /* Add styles to keep buttons above preview */
+        #backButton,
+        #homeButton,
+        div {
+            z-index: 2;
         }
     </style>
 </head>
@@ -84,7 +104,8 @@
     <div>
         <input type="text" placeholder="e" id="charInput1" maxlength="1">
         <input type="text" placeholder="n" id="charInput2" maxlength="1">
-        <button onclick="displayContent()" id="submitButton">enter</button>
+        <button onclick="displayContent()" id="submitButton" onmouseover="showLanguagePreview()"
+            onmouseout="hideLanguagePreview()">enter</button>
     </div>
 
     <!-- IFRAME TO DISPLAY -->
@@ -983,10 +1004,37 @@
             updatePlaceholders();
         }
 
+        function showLanguagePreview() {
+            const input1_letter = document.getElementById("charInput1").value.toUpperCase();
+            const input2_letter = document.getElementById("charInput2").value.toUpperCase();
+            const preview = document.getElementById("languagePreview");
+
+            // Create mapping of language codes to preview image URLs
+            const previewImages = {
+                'EN': 'https://assets.grok.com/users/f88def3b-c446-4c7d-9fc1-f4441cd1603f/generated/P0xbnxetXkJzb0FN/image.jpg',
+                'ZH': 'https://assets.grok.com/users/f88def3b-c446-4c7d-9fc1-f4441cd1603f/generated/s5Dmo4bQhp9STxcf/image.jpg'
+                // Add more language codes and their corresponding image URLs as needed
+            };
+
+            const langCode = input1_letter + input2_letter;
+            if (previewImages[langCode]) {
+                preview.src = previewImages[langCode];
+                preview.style.display = 'block';
+            }
+        }
+
+        function hideLanguagePreview() {
+            const preview = document.getElementById("languagePreview");
+            preview.style.display = "none";
+        }
+
         // Set initial placeholders when page loads
         updatePlaceholders();
 
     </script>
+
+    <!-- Replace the existing preview image with this generic one -->
+    <img src="" class="language-preview" id="languagePreview" alt="Language preview">
 
 </body>
 
